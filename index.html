@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Ihsan Project: Guiding the Ummah to Excellence - Maximally Advanced 2.0</title>
+
+  <link rel="manifest" href="/manifest.json">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .section { padding-top: 6rem; padding-bottom: 6rem; }
+
+    /* New Advanced Color Palette: Sapphire Blue (Primary) and Gold (Accent) */
+    .bg-primary { background-color: #1e3a8a; } /* Blue 800 (Deep Sapphire) */
+    .bg-primary-dark { background-color: #1e40af; } /* Blue 700 */
+    .text-primary { color: #1e3a8a; }
+    .border-primary { border-color: #1e3a8a; }
+    .bg-accent { background-color: #d97706; } /* Amber 700 (Deep Gold/Ochre) */
+    .text-accent { color: #d97706; }
+    
+    /* Dynamic Geometric Divider with Sapphire/Gold */
+    .geometric-divider { 
+        height: 8px; 
+        background: repeating-linear-gradient(45deg, #1e3a8a, #1e3a8a 15px, #d97706 15px, #d97706 30px); 
+        border-radius: 9999px; 
+        margin: 6rem auto; 
+        width: 90%; 
+        max-width: 1000px; 
+        opacity: 0.9; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .utility-bar { top: 1.5rem; right: 1.5rem; }
+    
+    /* Advanced Hover Effects */
+    .btn { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; }
+    .btn:hover { transform: translateY(-2px) scale(1.01); box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); }
+
+    /* Dark mode adjustments */
+    .dark .bg-gray-50 { background-color: #0f172a; } 
+    .dark .bg-white { background-color: #1f2937; }
+    .dark .text-gray-800 { color: #f3f4f6; }
+
+    /* Input focus (Sapphire glow) */
+    input:focus, textarea:focus, select:focus { outline: none; box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.4); border-color: #1e3a8a; }
+    
+    /* Spinner style for dynamic loading */
+    .spinner { border: 4px solid #f3f3f3; border-top: 4px solid #1e3a8a; border-radius: 50%; width: 24px; height: 24px; animation: spin 1s linear infinite; display: none; margin: 0 auto; }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased transition-colors duration-500">
+
+  <div class="fixed utility-bar z-50 flex flex-col space-y-3">
+      <button id="storageToggle" class="bg-blue-500 text-white p-3 rounded-full shadow-xl hover:bg-blue-600 btn transition-transform duration-300" aria-label="Toggle Offline Storage">💾</button>
+      <button id="darkToggle" class="bg-primary text-white p-3 rounded-full shadow-xl hover:bg-primary-dark btn transition-transform duration-300" aria-label="Toggle Dark Mode">🌙</button>
+  </div>
+
+  <a href="#home" class="fixed bottom-6 left-6 z-50 bg-gray-800 text-white p-3 rounded-full shadow-xl hover:bg-gray-700 btn transition-transform duration-300" aria-label="Back to Top">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
+  </a>
+
+  <header class="bg-white dark:bg-gray-900 shadow-xl sticky top-0 left-0 w-full z-40 transition-colors duration-500">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#home" class="flex items-center space-x-3 group" aria-label="Ihsan Project Home">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:rotate-12 transition-transform duration-300">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+          <polyline points="2 17 12 22 22 17"></polyline>
+          <polyline points="2 12 12 17 22 12"></polyline>
+        </svg>
+        <h1 class="text-2xl font-black text-primary dark:text-blue-400">Ihsan Project <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Guiding the Ummah to Excellence</span></h1>
+      </a>
+      <nav class="hidden md:flex space-x-6 font-medium">
+        <a href="#home" class="hover:text-primary dark:hover:text-blue-400 btn">Home</a>
+        <a href="#about" class="hover:text-primary dark:hover:text-blue-400 btn">About</a>
+        <a href="#muhasaba" class="hover:text-primary dark:hover:text-blue-400 btn">Muḥā́saba</a>
+        <a href="#contact" class="hover:text-primary dark:hover:text-blue-400 btn">Contact</a>
+      </nav>
+      </div>
+  </header>
+
+  <section id="home" class="section pt-32 pb-24 px-4 text-center bg-gradient-to-br from-primary to-primary-dark dark:from-gray-900 dark:to-gray-950 text-white shadow-2xl" data-aos="fade-in-down">
+    <h2 class="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">Ihsan: The Pinnacle of Spiritual Excellence</h2>
+    <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-95 mb-10">This project illuminates the path to sincere, God-conscious moral perfection in every endeavor, for the benefit of all humanity.</p>
+    <a href="#muhasaba" class="bg-accent text-primary py-3 px-10 rounded-full font-bold text-lg shadow-2xl hover:bg-amber-600 btn">Start Your Self-Assessment Today</a>
+  </section>
+  <div class="geometric-divider"></div>
+
+
+  <section id="muhasaba" class="section max-w-6xl mx-auto px-6 bg-yellow-50 dark:bg-gray-800/50" data-aos="fade-up">
+    <span class="text-sm font-semibold text-accent uppercase block text-center">Algorithmic Spiritual Refinement</span>
+    <h3 class="text-4xl font-bold text-center mb-10">The Ikhlāṣ & Istiqāmah Analytics Dashboard 🤖</h3>
+    <p class="text-lg max-w-4xl mx-auto text-center mb-12 dark:text-gray-300">This module applies advanced conceptual models to provide non-judgmental, data-driven feedback on your spiritual consistency and sincerity, vital for achieving true **Ihsan**.</p>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      
+      <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-xl border-t-4 border-primary" data-aos="flip-up" data-aos-delay="100">
+        <h4 class="text-xl font-bold mb-3 text-primary flex items-center">Intention & Steadfastness Analysis (TCI/Riyā) 📈</h4>
+        
+        <p class="text-sm dark:text-gray-300 mb-2 font-semibold">Self-Reflective Journal Entry (Raw Data Input):</p>
+        <textarea id="reflection-input" rows="4" class="w-full p-2 border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="Describe a significant good deed or trial today. (e.g., 'I performed Fajr on time but felt distracted. I helped an elderly person and they praised me a lot.')"></textarea>
+        
+        <button id="submit-reflection" class="w-full bg-primary text-white py-2 rounded-lg font-bold hover:bg-primary-dark btn text-sm mt-3">Run Proprietary Ikhlāṣ Scan</button>
+        
+        <div id="analysis-output" class="text-sm mt-4 p-3 bg-gray-100 dark:bg-gray-700 rounded text-gray-700 dark:text-gray-300 hidden">
+            <h5 class="font-bold text-lg mb-1">Algorithmic Feedback:</h5>
+            <div class="spinner mb-2" id="analysis-spinner"></div>
+            
+            <p class="font-semibold text-primary">Temporal Consistency Index (TCI): <span id="tci-score" class="text-base font-normal">N/A</span></p>
+            <p class="text-xs italic mb-2">*(Measures Istiqāmah against your 7-day average performance baseline.)*</p>
+            
+            <p class="font-semibold text-accent">Riyā Heuristic Flag: <span id="riya-flag" class="text-base font-normal">N/A</span></p>
+            <p class="text-xs italic">*(Conceptual NLP scan for linguistic cues indicating potential self-deception or desire for social validation.)*</p>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-xl border-t-4 border-accent" data-aos="flip-up" data-aos-delay="300">
+        <h4 class="text-xl font-bold mb-4 text-accent flex items-center">Priority & Social Justice Metrics (Fiqh al-Awlāwiyāt) ⚖️</h4>
+        
+        <div class="space-y-4">
+            <label class="block dark:text-gray-300 border-b pb-3 border-gray-200 dark:border-gray-700">
+                <span class="font-semibold text-sm block mb-1">Fard (Obligatory) Assessment:</span>
+                <select id="fard-status" class="w-full p-2 border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                    <option value="perfect">Perfect (All duties fulfilled with Itqān)</option>
+                    <option value="adequate">Adequate (Met minimum Fard duties)</option>
+                    <option value="lacking">Lacking (Missed/delayed Fard duties)</option>
+                </select>
+            </label>
+            
+            <label class="block dark:text-gray-300">
+                <span class="font-semibold text-sm block mb-1">Haqq al-'Ibād (Rights of People) Input:</span>
+                <div class="flex space-x-2 mb-2">
+                    <input type="number" id="social-justice-score" min="0" max="100" value="75" class="w-full p-2 border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="Score 0-100">
+                </div>
+                <p class="text-xs italic dark:text-gray-400">**(0: Actively harmed/oppressed; 100: Maximized Manfa'a/Justice)**</p>
+            </label>
+            
+            <div class="mt-4 p-3 bg-accent/10 dark:bg-gray-700/50 rounded-lg">
+                <p id="focus-recommendation" class="text-base font-bold text-gray-800 dark:text-gray-200">Recommendation: Loading...</p>
+                <p class="text-sm mt-1 font-semibold text-accent">Haqq al-'Ibād Score: <span id="haqq-score-display">75/100</span></p>
+            </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <div class="geometric-divider"></div>
+
+  <section id="contact" class="section max-w-5xl mx-auto px-6" data-aos="fade-up">
+    <span class="text-sm font-semibold text-center block text-primary uppercase">Engagement Portal</span>
+    <h3 class="text-4xl font-bold text-center mb-10">Direct Contact: The Ihsan Project Team 📞</h3>
+    <p class="text-center text-lg max-w-3xl mx-auto mb-8 dark:text-gray-300">For academic collaborations, research queries, or advanced ethical consultation, please use the portal below. We strive for Ihsan in our communication response time, guided by esteemed scholars.</p>
+    <form class="space-y-6 bg-white dark:bg-gray-800 p-8 rounded-xl shadow-2xl" id="contact-form" aria-labelledby="contact-heading">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label for="name" class="block text-sm font-medium mb-1">Name</label>
+          <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="Your Name" aria-required="true" />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium mb-1">Email</label>
+          <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="Your Email" aria-required="true" />
+        </div>
+      </div>
+      <div>
+        <label for="subject" class="block text-sm font-medium mb-1">Subject</label>
+        <input type="text" id="subject" name="subject" required class="w-full p-3 border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="Advanced Query Type" aria-required="true" />
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-medium mb-1">Detailed Message</label>
+        <textarea id="message" name="message" rows="5" required class="w-full p-3 border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="Your detailed request here..." aria-required="true"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg font-bold hover:bg-primary-dark btn shadow-md" id="submit-contact">Submit Advanced Query</button>
+      <div id="contact-status" class="mt-3 text-center text-sm font-semibold hidden" aria-live="assertive"></div>
+    </form>
+  </section>
+  <footer class="bg-gray-800 dark:bg-gray-900 text-white text-center py-8 mt-16 transition-colors duration-500">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-sm border-t border-gray-700 pt-4">&copy; 2025 Ihsan Project. Developed by **The Ihsan Project Team**. PWA Ready.</p>
+    </div>
+  </footer>
+
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // 1. AOS animations Initialization
+    AOS.init({ 
+      duration: 1000, 
+      once: true,
+      easing: 'ease-in-out'
+    });
+
+    // 2. Dark mode toggle and persistence (Omitted for brevity)
+    const darkToggle = document.getElementById('darkToggle');
+    const htmlEl = document.documentElement;
+
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        htmlEl.classList.add('dark');
+        localStorage.theme = 'dark';
+        darkToggle.textContent = '☀️';
+      } else {
+        htmlEl.classList.remove('dark');
+        localStorage.theme = 'light';
+        darkToggle.textContent = '🌙';
+      }
+    }
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+
+    darkToggle.addEventListener('click', () => {
+      const newTheme = htmlEl.classList.contains('dark') ? 'light' : 'dark';
+      setTheme(newTheme);
+    });
+    
+    // 3. PWA Readiness / Conceptual Storage (Omitted for brevity)
+    
+    // --- ADVANCED FEATURE IMPLEMENTATION ---
+
+    // Conceptual historical data for TCI (last 7 days' score - max 100)
+    // In a real application, this would be fetched from a database.
+    const historicalScores = [75, 80, 78, 85, 82, 88, 91]; 
+    const tciScore = document.getElementById('tci-score');
+    const riyaFlag = document.getElementById('riya-flag');
+    const fardStatus = document.getElementById('fard-status');
+    const focusRecommendation = document.getElementById('focus-recommendation');
+    const socialJusticeScoreInput = document.getElementById('social-justice-score');
+    const haqqScoreDisplay = document.getElementById('haqq-score-display');
+    
+
+    // 4. FARD/NAWĀFIL Dynamic Prioritizer & Haqq al-'Ibād Score Logic
+    function updateMuḥā́sabaMetrics() {
+        const status = fardStatus.value;
+        const haqqScore = parseInt(socialJusticeScoreInput.value);
+
+        // Update Haqq al-'Ibād display
+        haqqScoreDisplay.textContent = `${haqqScore}/100`;
+
+        // Update Recommendation (Fiqh al-Awlāwiyāt)
+        focusRecommendation.classList.remove('text-primary', 'text-accent', 'text-red-500', 'text-gray-800');
+
+        if (status === 'lacking') {
+            focusRecommendation.textContent = "CRITICAL: Fard duties are lacking. Focus entirely on perfecting the Obligatory Acts. Voluntary acts (Nawāfil) are secondary. (Hadith Qudsi)";
+            focusRecommendation.classList.add('text-red-500');
+        } else if (haqqScore < 50) {
+             focusRecommendation.textContent = `CRITICAL: Haqq al-'Ibād score is low (${haqqScore}). Prioritize making amends and maximizing Manfa'a (Benefit to creation). Social Ihsan is mandatory.`;
+             focusRecommendation.classList.add('text-red-500');
+        } else if (status === 'perfect' && haqqScore >= 90) {
+            focusRecommendation.textContent = "EXCELLENCE (Ihsan State): Fard is perfect, and Huqūq al-Ibād is maximized. Maintain this comprehensive spiritual altitude (Istiqāmah).";
+            focusRecommendation.classList.add('text-primary');
+        } else if (status === 'perfect' && haqqScore >= 70) {
+             focusRecommendation.textContent = "STRONG: Fard is perfect. Huqūq al-Ibād is commendable. Seek subtle ways to enhance benefit to your community (Manfa'a).";
+            focusRecommendation.classList.add('text-accent');
+        } else {
+            focusRecommendation.textContent = "Recommendation: Ensure Fard is perfect (Itqān). Then, review the Haqq al-'Ibād score for potential social improvement areas.";
+            focusRecommendation.classList.add('text-gray-800', 'dark:text-gray-200');
+        }
+    }
+
+    if (fardStatus && socialJusticeScoreInput) {
+        fardStatus.addEventListener('change', updateMuḥā́sabaMetrics);
+        socialJusticeScoreInput.addEventListener('input', updateMuḥā́sabaMetrics);
+        updateMuḥā́sabaMetrics(); // Initial run
+    }
+
+
+    // 5. TCI & Riyā Heuristic Engine Logic
+    const submitReflection = document.getElementById('submit-reflection');
+    const reflectionInput = document.getElementById('reflection-input');
+    const analysisOutput = document.getElementById('analysis-output');
+    const analysisSpinner = document.getElementById('analysis-spinner');
+
+    submitReflection.addEventListener('click', () => {
+        const reflection = reflectionInput.value.trim().toLowerCase();
+        if (reflection.length < 30) {
+            alert("Please write a detailed reflection (min. 30 characters) for a meaningful scan.");
+            return;
+        }
+
+        // 1. Show loading state
+        submitReflection.disabled = true;
+        analysisOutput.classList.remove('hidden');
+        tciScore.textContent = 'Analyzing...';
+        riyaFlag.textContent = 'Scanning...';
+        analysisSpinner.style.display = 'block';
+
+        // 2. Simulate API Call & Advanced Heuristic Processing
+        setTimeout(() => {
+            analysisSpinner.style.display = 'none';
+            submitReflection.disabled = false;
+            
+            // --- TCI Calculation (Temporal Consistency Index) ---
+            const currentScore = Math.floor(Math.random() * 5) + 95; // Simulate today's high score 95-99
+            const averageScore = historicalScores.reduce((a, b) => a + b, 0) / historicalScores.length;
+            const deviation = currentScore - averageScore;
+            
+            let tciResult;
+            if (deviation >= 5) {
+                tciResult = `${currentScore} (Top 10th Percentile). **Significant Uplift** in Istiqāmah detected. Well done!`;
+            } else if (deviation < -5) {
+                tciResult = `${currentScore} (Below Average). **Consistency Deviation** detected. Review yesterday's log for root cause analysis.`;
+            } else {
+                tciResult = `${currentScore} (Stable). **Istiqāmah Maintained**. Steadfastness is loved by Allah.`;
+            }
+
+            // --- Riyā Heuristic Engine (Ikhlāṣ Check) ---
+            let riyaResult = "Ikhlāṣ Confirmed (None Detected).";
+            const riyaKeywords = ['proud', 'told everyone', 'boast', 'people saw', 'praised me', 'i deserve'];
+
+            if (riyaKeywords.some(keyword => reflection.includes(keyword)) && reflection.includes('generously')) {
+                riyaResult = "POTENTIAL HIGH FLAG. Contains self-praise and mention of public knowledge. Re-evaluate Niyyah (intention) to safeguard Ikhlāṣ.";
+            } else if (reflection.includes('distracted') && reflection.includes('forgive')) {
+                 riyaResult = "Sincerity is validated by admitting internal faults (distraction) while focusing on external virtue (forgiveness). Good Ikhlāṣ.";
+            }
+
+            // 3. Display Result
+            tciScore.textContent = tciResult;
+            riyaFlag.textContent = riyaResult;
+            
+            // Update historical scores (conceptual data update)
+            historicalScores.shift();
+            historicalScores.push(currentScore);
+
+        }, 3000); // 3-second simulation delay for realism
+    });
+  </script>
+</body>
+</html>
